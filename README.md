@@ -17,7 +17,7 @@ npm install
 
 ```
 
-```
-Run `Mongod` on one terminal tab and other with `node server.js`
+``
+Run **Mongod** on one terminal tab and other with **node server.js**
 
 ```
