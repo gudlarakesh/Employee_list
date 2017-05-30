@@ -4,9 +4,10 @@ var app = app || {};
  	el: '#employees',
  	initialize: function(intialEmployees) {
  		this.collection = new app.EmployeeList(intialEmployees);
+ 		this.collection.fetch({reset : true});
  		this.render();
-
  		this.listenTo(this.collection, 'add', this.renderEmployee);
+ 		this.listenTo(this.collection, 'reset', this.render);
  	},
  	render: function() {
  		this.collection.each(function(item) {
@@ -31,7 +32,6 @@ var app = app || {};
  				formData[el.id] = $(el).val();
  			}
  		});
- 		console.log(this.collection.models);
- 		this.collection.add(new app.Employee(formData));
+ 		this.collection.create(formData);
  	}
  });

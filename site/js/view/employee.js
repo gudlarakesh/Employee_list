@@ -8,6 +8,10 @@ var app = app || {};
  		this.$el.html(this.template(this.model.toJSON()));
  		return this;
  	},
+ 	parse: function( response ) { 
+ 		response.id = response._id; 
+ 		return response;
+	},
  	events: {
  		'click .delete': 'deleteEmployee'
  	},
